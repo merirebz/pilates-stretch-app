@@ -1,0 +1,369 @@
+:root {
+  --bg: #fbf6f3;
+  --surface: #fff;
+  --text: #2b2326;
+  --muted: #7a6a70;
+  --accent: #c9697f;
+  --accent2: #f3d9df;
+  --border: #eadfe2;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1518;
+    --surface: #272024;
+    --text: #f6ecef;
+    --muted: #b7a5ab;
+    --accent: #e58aa0;
+    --accent2: #3b2a31;
+    --border: #3a2e33;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1518;
+  --surface: #272024;
+  --text: #f6ecef;
+  --muted: #b7a5ab;
+  --accent: #e58aa0;
+  --accent2: #3b2a31;
+  --border: #3a2e33;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    sans-serif;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  margin: 0;
+}
+#app {
+  max-width: 520px;
+  margin: auto;
+  padding: 20px 18px 100px;
+}
+.view {
+  display: none;
+}
+.view.on {
+  display: block;
+}
+h1 {
+  font-size: 30px;
+}
+h1 em {
+  color: var(--accent);
+}
+.sub {
+  color: var(--muted);
+  margin: 4px 0 16px;
+  font-size: 15px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.btn.sm {
+  padding: 7px 16px;
+  font-size: 13px;
+}
+.tag {
+  display: inline-block;
+  background: var(--accent2);
+  color: var(--accent);
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+}
+.stat b {
+  display: block;
+  font-size: 26px;
+  color: var(--accent);
+}
+.stat span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.goal {
+  height: 8px;
+  background: var(--accent2);
+  border-radius: 9px;
+  overflow: hidden;
+  margin: 6px 0 4px;
+}
+.goal i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: 0.5s;
+}
+.rt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.rt .e {
+  font-size: 34px;
+}
+.rt .i {
+  flex: 1;
+}
+.rt h3 {
+  font-size: 19px;
+}
+.rt p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.chips {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.chip {
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.chip.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+svg.f {
+  width: 100%;
+  height: auto;
+  background: var(--accent2);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+.fig line,
+.fig path {
+  stroke: var(--accent);
+  stroke-width: 7;
+  stroke-linecap: round;
+  fill: none;
+}
+.fig circle {
+  fill: var(--accent);
+}
+.fig .fl {
+  stroke: var(--border);
+  stroke-width: 3;
+}
+ol {
+  padding-left: 18px;
+  margin: 8px 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.heart {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  background: var(--surface);
+  border: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.bars {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  height: 120px;
+}
+.bar {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+.bar i {
+  display: block;
+  background: var(--accent);
+  border-radius: 6px 6px 2px 2px;
+  min-height: 3px;
+  margin-bottom: 4px;
+}
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+nav button {
+  flex: 1;
+  max-width: 170px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  padding: 10px 0 12px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+nav button span {
+  display: block;
+  font-size: 20px;
+}
+nav button.on {
+  color: var(--accent);
+}
+#player {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 10;
+  display: none;
+  overflow: auto;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) 18px
+    calc(20px + env(safe-area-inset-bottom, 0px));
+}
+#player.on {
+  display: block;
+}
+.pin {
+  max-width: 520px;
+  margin: auto;
+  text-align: center;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.top button {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-size: 22px;
+  cursor: pointer;
+}
+.pb {
+  height: 5px;
+  background: var(--accent2);
+  border-radius: 9px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.pb i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: 0.4s;
+}
+.ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 8px auto;
+}
+.ring svg {
+  transform: rotate(-90deg);
+}
+.ring .t {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+.ctl {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.pin ol {
+  text-align: left;
+}
+.sw {
+  background: var(--accent2);
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--accent);
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
