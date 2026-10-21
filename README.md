@@ -1,1 +1,1 @@
-![image alt](pilates.png)
+![image alt](pl.png)
